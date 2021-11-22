@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fc467eb4-0788-4bc4-84fe-29ddc596bdeb" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="203" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Payroll" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="OrderServiceTest.completeOrder_FindOrderSuccessful_ThenStatusInProgress" />
+    </enabled-run-configurations>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="1.8" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="20ztXvbHIjxcEiyi9qdofC9Ln9A" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.EmployeeServiceTest">
+    <configuration name="EmployeeServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Payroll" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Payroll.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Payroll.Services" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Payroll.Services.EmployeeServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeServiceTest.deleteEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Payroll" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Payroll.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Payroll.Services" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Payroll.Services.EmployeeServiceTest" />
+      <option name="METHOD_NAME" value="deleteEmployee" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeServiceTest.getEmployeeSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Payroll" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Payroll.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Payroll.Services" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Payroll.Services.EmployeeServiceTest" />
+      <option name="METHOD_NAME" value="getEmployeeSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeServiceTest.newEmployeeSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Payroll" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Payroll.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Payroll.Services" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Payroll.Services.EmployeeServiceTest" />
+      <option name="METHOD_NAME" value="newEmployeeSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeServiceTest.replaceEmployee_NewEmployee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Payroll" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Payroll.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.Payroll.Services" />
+      <option name="MAIN_CLASS_NAME" value="com.example.Payroll.Services.EmployeeServiceTest" />
+      <option name="METHOD_NAME" value="replaceEmployee_NewEmployee" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PayrollApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Payroll" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Payroll.PayrollApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.EmployeeServiceTest" />
+        <item itemvalue="JUnit.EmployeeServiceTest.deleteEmployee" />
+        <item itemvalue="JUnit.EmployeeServiceTest.replaceEmployee_NewEmployee" />
+        <item itemvalue="JUnit.EmployeeServiceTest.getEmployeeSuccessful" />
+        <item itemvalue="JUnit.EmployeeServiceTest.newEmployeeSuccessful" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc467eb4-0788-4bc4-84fe-29ddc596bdeb" name="Default Changelist" comment="" />
+      <created>1637059286947</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637059286947</updated>
+      <workItem from="1637059288417" duration="8933000" />
+      <workItem from="1637114720666" duration="4414000" />
+      <workItem from="1637124318665" duration="137000" />
+      <workItem from="1637124470284" duration="88359000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.5.6/spring-data-jpa-2.5.6.jar!/org/springframework/data/jpa/repository/support/SimpleJpaRepository.class</url>
+          <line>339</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/Payroll/Services/OrderServiceTest.java</url>
+          <line>243</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/Payroll/Services/EmployeeServiceTest.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/Payroll/Services/EmployeeServiceTest.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/Payroll/Services/OrderServiceTest.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/Payroll/Services/EmployeeServiceTest.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Payroll$EmployeeServiceTest_getEmployeesSuccessful.ic" NAME="EmployeeServiceTest.getEmployeesSuccessful Coverage Results" MODIFIED="1637317610867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.Payroll.Services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Payroll$PayrollApplication.ic" NAME="PayrollApplication Coverage Results" MODIFIED="1637289317974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Payroll$EmployeeServiceTest_replaceEmployee_EmployeeExisted.ic" NAME="EmployeeServiceTest.replaceEmployee_EmployeeExisted Coverage Results" MODIFIED="1637291999062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.Payroll.Services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Payroll$OrderServiceTest_completeOrder_FindOrderSuccessful_ThenStatusNotInProgress_COMPLETED.ic" NAME="OrderServiceTest.completeOrder_FindOrderSuccessful_ThenStatusNotInProgress_COMPLETED Coverage Results" MODIFIED="1637297587768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.Payroll.Services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Payroll$EmployeeServiceTest_replaceEmployee_ExistEmployee.ic" NAME="EmployeeServiceTest.replaceEmployee_ExistEmployee Coverage Results" MODIFIED="1637314586697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.Payroll.Services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Payroll$OrderServiceTest.ic" NAME="OrderServiceTest Coverage Results" MODIFIED="1637240303741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.Payroll.Services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Payroll$EmployeeServiceTest_replaceEmployee_NewEmployee.ic" NAME="EmployeeServiceTest.replaceEmployee_NewEmployee Coverage Results" MODIFIED="1637314352728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.Payroll.Services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Payroll$OrderServiceTest_completeOrder_FindOrderSuccessful_ThenStatusInProgress.ic" NAME="OrderServiceTest.completeOrder_FindOrderSuccessful_ThenStatusInProgress Coverage Results" MODIFIED="1637295917935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.Payroll.Services.*</FILTER>
+    </SUITE>
+  </component>
+</project>
