@@ -27,14 +27,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(OrderController.class)
 public class OrderControllerTest {
@@ -61,7 +59,14 @@ public class OrderControllerTest {
         ResultActions response = this.mockMvc.perform(get("/orders/1")
                 .param("id", orderId.toString()))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(1L))
+                .andExpect(jsonPath("$.description").value("MacBook Pro"))
+                .andExpect(jsonPath("$.status").value("COMPLETED"))
+                .andExpect(jsonPath("$._links").isNotEmpty())
+                .andExpect(jsonPath("$._links.self.href").value("/orders/1"))
+                .andExpect(jsonPath("$._links.orders.href").value("/orders"));
+
     }
 
     @Test
@@ -111,13 +116,13 @@ public class OrderControllerTest {
         orderList.add(orderOptionalTwo.get());
 
         List<EntityModel<Order>> orderEntityList = orderList.stream().map((order) -> {
-            EntityModel<Order> orderEntity = EntityModel.of(orderOptionalOne.get(),
-                    linkTo(methodOn(OrderController.class).one(orderIdOne)).withSelfRel(),
+            EntityModel<Order> orderEntity = EntityModel.of(order,
+                    linkTo(methodOn(OrderController.class).one(order.getId())).withSelfRel(),
                     linkTo(methodOn(OrderController.class).all()).withRel("orders"));
 
             if (order.getStatus() == Status.IN_PROGRESS) {
-                orderEntity.add(linkTo(methodOn(OrderController.class).cancel(orderIdTwo)).withRel("cancel"));
-                orderEntity.add(linkTo(methodOn(OrderController.class).complete(orderIdTwo)).withRel("complete"));
+                orderEntity.add(linkTo(methodOn(OrderController.class).cancel(order.getId())).withRel("cancel"));
+                orderEntity.add(linkTo(methodOn(OrderController.class).complete(order.getId())).withRel("complete"));
             }
 
             return orderEntity;
@@ -130,7 +135,14 @@ public class OrderControllerTest {
 
         ResultActions response = this.mockMvc.perform(get("/orders"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk()).andExpect(jsonPath("$._embedded.orderList[1].id").value(2L))
+                .andExpect(jsonPath("$._embedded.orderList[1].description").value("iPhone"))
+                .andExpect(jsonPath("$._embedded.orderList[1].status").value("IN_PROGRESS"))
+                .andExpect(jsonPath("$._embedded.orderList[1]._links").isNotEmpty())
+                .andExpect(jsonPath("$._embedded.orderList[1]._links.self.href").value("/orders/2"))
+                .andExpect(jsonPath("$._embedded.orderList[1]._links.orders.href").value("/orders"))
+                .andExpect(jsonPath("$._embedded.orderList[1]._links.cancel.href").value("/orders/2/cancel"))
+                .andExpect(jsonPath("$._embedded.orderList[1]._links.complete.href").value("/orders/2/complete"));
     }
     // }}
 
@@ -159,7 +171,15 @@ public class OrderControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{ \"description\":\"New Order\", \"status\":\"IN_PROGRESS\"}"))
                 .andDo(print())
-                .andExpect(status().isCreated());
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(4L))
+                .andExpect(jsonPath("$.description").value("New Order"))
+                .andExpect(jsonPath("$.status").value("IN_PROGRESS"))
+                .andExpect(jsonPath("$._links").isNotEmpty())
+                .andExpect(jsonPath("$._links.self.href").value("/orders/4"))
+                .andExpect(jsonPath("$._links.orders.href").value("/orders"))
+                .andExpect(jsonPath("$._links.cancel.href").value("/orders/4/cancel"))
+                .andExpect(jsonPath("$._links.complete.href").value("/orders/4/complete"));
     }
 
     @Test
@@ -191,7 +211,13 @@ public class OrderControllerTest {
         ResultActions response = this.mockMvc.perform(delete("/orders/3/cancel")
                 .param("id", orderId.toString()))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(3L))
+                .andExpect(jsonPath("$.description").value("iPhone"))
+                .andExpect(jsonPath("$.status").value("CANCELLED"))
+                .andExpect(jsonPath("$._links").isNotEmpty())
+                .andExpect(jsonPath("$._links.self.href").value("/orders/3"))
+                .andExpect(jsonPath("$._links.orders.href").value("/orders"));
     }
 
     @Test
@@ -241,7 +267,13 @@ public class OrderControllerTest {
         ResultActions response = this.mockMvc.perform(put("/orders/3/complete")
                 .param("id", orderId.toString()))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(3L))
+                .andExpect(jsonPath("$.description").value("iPhone"))
+                .andExpect(jsonPath("$.status").value("COMPLETED"))
+                .andExpect(jsonPath("$._links").isNotEmpty())
+                .andExpect(jsonPath("$._links.self.href").value("/orders/3"))
+                .andExpect(jsonPath("$._links.orders.href").value("/orders"));
     }
 
     @Test

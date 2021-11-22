@@ -29,6 +29,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(EmployeeController.class)
@@ -46,7 +47,7 @@ public class EmployeeControllerTest {
 
         // give
         Long employeeIdOne = 1L;
-        Optional<Employee> employeeOptionalOne = java.util.Optional.of(new Employee("Bilbo", "Baggins", "burglar"));
+        Optional<Employee> employeeOptionalOne = java.util.Optional.of(new Employee("Bilbo", "Bilbo", "burglar"));
         employeeOptionalOne.get().setId(employeeIdOne);
 
         Long employeeIdTwo = 2L;
@@ -69,7 +70,14 @@ public class EmployeeControllerTest {
 
         ResultActions response = this.mockMvc.perform(get("/employees"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk()).andExpect(jsonPath("$._embedded.employeeList[0].id").value(1L))
+                .andExpect(jsonPath("$._embedded.employeeList[0].firstName").value("Bilbo"))
+                .andExpect(jsonPath("$._embedded.employeeList[0].lastName").value("Bilbo"))
+                .andExpect(jsonPath("$._embedded.employeeList[0].name").value("Bilbo Bilbo"))
+                .andExpect(jsonPath("$._embedded.employeeList[0].role").value("burglar"))
+                .andExpect(jsonPath("$._embedded.employeeList[0]._links").isNotEmpty())
+                .andExpect(jsonPath("$._embedded.employeeList[0]._links.self.href").value("/employees/1"))
+                .andExpect(jsonPath("$._embedded.employeeList[0]._links.employees.href").value("/employees"));
 
     }
     // }}
@@ -96,7 +104,15 @@ public class EmployeeControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{ \"fistName\":\"fakie\", \"lastName\":\"nanoi\", \"role\":\"noob\"}"))
                 .andDo(print())
-                .andExpect(status().isCreated());
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(3L))
+                .andExpect(jsonPath("$.firstName").value("fakie"))
+                .andExpect(jsonPath("$.lastName").value("nanoi"))
+                .andExpect(jsonPath("$.name").value("fakie nanoi"))
+                .andExpect(jsonPath("$.role").value("noob"))
+                .andExpect(jsonPath("$._links").isNotEmpty())
+                .andExpect(jsonPath("$._links.self.href").value("/employees/3"))
+                .andExpect(jsonPath("$._links.employees.href").value("/employees"));
 
     }
 
@@ -128,7 +144,15 @@ public class EmployeeControllerTest {
         ResultActions response = this.mockMvc.perform(get("/employees/1")
                 .param("id", employeeId.toString()))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(1L))
+                .andExpect(jsonPath("$.firstName").value("Bilbo"))
+                .andExpect(jsonPath("$.lastName").value("Baggins"))
+                .andExpect(jsonPath("$.name").value("Bilbo Baggins"))
+                .andExpect(jsonPath("$.role").value("burglar"))
+                .andExpect(jsonPath("$._links").isNotEmpty())
+                .andExpect(jsonPath("$._links.self.href").value("/employees/1"))
+                .andExpect(jsonPath("$._links.employees.href").value("/employees"));
 
     }
 
@@ -179,7 +203,15 @@ public class EmployeeControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{ \"fistName\":\"fakie\", \"lastName\":\"nanoi\", \"role\":\"noob\"}"))
                 .andDo(print())
-                .andExpect(status().isCreated());
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(1L))
+                .andExpect(jsonPath("$.firstName").value("fakie"))
+                .andExpect(jsonPath("$.lastName").value("nanoi"))
+                .andExpect(jsonPath("$.name").value("fakie nanoi"))
+                .andExpect(jsonPath("$.role").value("noob"))
+                .andExpect(jsonPath("$._links").isNotEmpty())
+                .andExpect(jsonPath("$._links.self.href").value("/employees/1"))
+                .andExpect(jsonPath("$._links.employees.href").value("/employees"));
 
     }
 
